@@ -1,0 +1,273 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* The Courtyard Spa Company — Luxury Wellness Design System
+ * Forest green + slate + cream. Playfair Display headings, Inter body.
+ * All colors in oklch.
+ */
+
+@theme inline {
+  --font-serif: "Playfair Display", "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-cream: var(--cream);
+  --color-sand: var(--sand);
+  --color-forest: var(--forest);
+  --color-forest-deep: var(--forest-deep);
+  --color-sage: var(--sage);
+  --color-sage-deep: var(--sage-deep);
+  --color-slate-warm: var(--slate-warm);
+  --color-stone: var(--stone);
+
+  --shadow-soft: 0 1px 2px oklch(0.2 0.02 160 / 0.04), 0 8px 24px oklch(0.2 0.02 160 / 0.06);
+  --shadow-elev: 0 2px 4px oklch(0.2 0.02 160 / 0.06), 0 24px 48px oklch(0.2 0.02 160 / 0.1);
+
+  --gradient-forest: linear-gradient(135deg, oklch(0.28 0.04 160) 0%, oklch(0.18 0.03 165) 100%);
+  --gradient-cream: linear-gradient(180deg, oklch(0.985 0.005 90) 0%, oklch(0.96 0.008 85) 100%);
+  --gradient-overlay: linear-gradient(
+    180deg,
+    oklch(0.15 0.02 160 / 0) 0%,
+    oklch(0.12 0.02 160 / 0.75) 100%
+  );
+}
+
+:root {
+  --radius: 0.25rem;
+
+  /* Brand palette — Quiet Luxury: soft beige, sage green, warm stone */
+  --cream: oklch(0.975 0.012 80);
+  --stone: oklch(0.93 0.014 80);
+  --sand: oklch(0.89 0.018 78);
+  --slate-warm: oklch(0.5 0.012 220);
+  --sage: oklch(0.62 0.045 145);
+  --sage-deep: oklch(0.42 0.05 150);
+  --forest: oklch(0.36 0.04 155);
+  --forest-deep: oklch(0.26 0.035 160);
+
+  /* Semantic — warm beige base, sage accent */
+  --background: oklch(0.97 0.012 80);
+  --foreground: oklch(0.24 0.02 160);
+  --card: oklch(0.985 0.008 80);
+  --card-foreground: oklch(0.24 0.02 160);
+  --popover: oklch(0.99 0.006 80);
+  --popover-foreground: oklch(0.24 0.02 160);
+  --primary: oklch(0.36 0.04 155);
+  --primary-foreground: oklch(0.975 0.012 80);
+  --secondary: oklch(0.93 0.014 80);
+  --secondary-foreground: oklch(0.36 0.04 155);
+  --muted: oklch(0.94 0.012 80);
+  --muted-foreground: oklch(0.5 0.014 150);
+  --accent: oklch(0.62 0.045 145);
+  --accent-foreground: oklch(0.985 0.012 80);
+  --destructive: oklch(0.55 0.16 28);
+  --destructive-foreground: oklch(0.985 0.012 80);
+  --border: oklch(0.86 0.012 80);
+  --input: oklch(0.86 0.012 80);
+  --ring: oklch(0.62 0.045 145);
+
+  --chart-1: oklch(0.36 0.04 155);
+  --chart-2: oklch(0.62 0.045 145);
+  --chart-3: oklch(0.5 0.012 220);
+  --chart-4: oklch(0.78 0.03 80);
+  --chart-5: oklch(0.88 0.02 80);
+}
+
+.dark {
+  --background: oklch(0.16 0.02 165);
+  --foreground: oklch(0.96 0.008 85);
+  --card: oklch(0.22 0.025 165);
+  --card-foreground: oklch(0.96 0.008 85);
+  --popover: oklch(0.22 0.025 165);
+  --popover-foreground: oklch(0.96 0.008 85);
+  --primary: oklch(0.96 0.008 85);
+  --primary-foreground: oklch(0.22 0.025 165);
+  --secondary: oklch(0.26 0.03 165);
+  --secondary-foreground: oklch(0.96 0.008 85);
+  --muted: oklch(0.26 0.03 165);
+  --muted-foreground: oklch(0.7 0.02 165);
+  --accent: oklch(0.55 0.06 155);
+  --accent-foreground: oklch(0.96 0.008 85);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 12%);
+  --ring: oklch(0.55 0.06 155);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv11";
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-family: var(--font-serif);
+    font-weight: 500;
+    letter-spacing: -0.015em;
+  }
+
+  ::selection {
+    background-color: var(--forest);
+    color: var(--cream);
+  }
+}
+
+@layer utilities {
+  .font-serif {
+    font-family: var(--font-serif);
+  }
+  .font-sans {
+    font-family: var(--font-sans);
+  }
+
+  .eyebrow {
+    font-family: var(--font-sans);
+    font-size: 0.6875rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .container-luxe {
+    max-width: 84rem;
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+  }
+  @media (min-width: 768px) {
+    .container-luxe {
+      padding-inline: 2.5rem;
+    }
+  }
+  @media (min-width: 1280px) {
+    .container-luxe {
+      padding-inline: 4rem;
+    }
+  }
+
+  .hero-gradient {
+    background-image: var(--gradient-overlay);
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    animation: reveal-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+  .reveal-delay-1 {
+    animation-delay: 0.12s;
+  }
+  .reveal-delay-2 {
+    animation-delay: 0.24s;
+  }
+  .reveal-delay-3 {
+    animation-delay: 0.36s;
+  }
+  .reveal-delay-4 {
+    animation-delay: 0.48s;
+  }
+
+  @keyframes reveal-up {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .image-zoom {
+    overflow: hidden;
+  }
+  .image-zoom img {
+    transition: transform 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .image-zoom:hover img {
+    transform: scale(1.06);
+  }
+
+  .link-underline {
+    position: relative;
+  }
+  .link-underline::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 1px;
+    width: 100%;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .link-underline:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  .hairline {
+    border-color: color-mix(in oklab, var(--foreground) 12%, transparent);
+  }
+
+  .btn-lift {
+    transition:
+      transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+      background-color 0.3s ease,
+      color 0.3s ease;
+  }
+  .btn-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px oklch(0.2 0.02 160 / 0.1);
+  }
+
+  .parallax-img {
+    will-change: transform;
+    transition: transform 0.1s linear;
+  }
+
+  .star-rating svg {
+    fill: currentColor;
+  }
+}

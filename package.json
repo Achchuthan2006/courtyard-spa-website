@@ -1,0 +1,10 @@
+{
+  "name": "courtyard-serenity-hub-workspace",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix .\\courtyard-serenity-hub-main run dev",
+    "build": "npm --prefix .\\courtyard-serenity-hub-main run build",
+    "lint": "npm --prefix .\\courtyard-serenity-hub-main run lint",
+    "preview": "npm --prefix .\\courtyard-serenity-hub-main run preview"
+  }
+}
